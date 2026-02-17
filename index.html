@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vansh Raj | Portfolio</title>
+
+<style>
+/* ---------- VARIABLES ---------- */
+:root {
+    --bg: #f4f6f8;
+    --card: rgba(255,255,255,0.75);
+    --text: #1f2933;
+    --primary: #6366f1;
+    --secondary: #0f172a;
+    --accent: #c7d2fe;
+    --glass: blur(12px);
+}
+
+/* DARK MODE */
+body.dark {
+    --bg: #020617;
+    --card: rgba(15,23,42,0.7);
+    --text: #e5e7eb;
+    --accent: #312e81;
+}
+
+/* ---------- GLOBAL ---------- */
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: linear-gradient(135deg, var(--bg), #eef2ff);
+    color: var(--text);
+    transition: background 0.4s, color 0.4s;
+}
+
+/* ---------- HEADER ---------- */
+header {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 3rem;
+    background: linear-gradient(90deg, #6366f1, #22d3ee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.typing {
+    font-size: 1.4rem;
+    margin-top: 10px;
+}
+
+.cursor {
+    display: inline-block;
+    width: 3px;
+    height: 24px;
+    background: currentColor;
+    margin-left: 5px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* ---------- NAV ---------- */
+nav {
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(10px);
+    background: rgba(15,23,42,0.8);
+    padding: 12px;
+    text-align: center;
+    z-index: 100;
+}
+
+nav a {
+    color: #e5e7eb;
+    margin: 0 12px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover { color: #22d3ee; }
+
+/* ---------- SECTIONS ---------- */
+section {
+    max-width: 1000px;
+    margin: 60px auto;
+    background: var(--card);
+    backdrop-filter: var(--glass);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2 {
+    font-size: 1.8rem;
+    border-left: 6px solid var(--primary);
+    padding-left: 12px;
+}
+
+/* ---------- SKILLS ---------- */
+.skills span {
+    display: inline-block;
+    background: linear-gradient(135deg, #6366f1, #22d3ee);
+    color: #fff;
+    padding: 8px 16px;
+    margin: 8px;
+    border-radius: 30px;
+    font-size: 14px;
+    transition: transform 0.3s;
+}
+
+.skills span:hover { transform: scale(1.15); }
+
+/* ---------- BUTTON ---------- */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 26px;
+    background: linear-gradient(135deg, #6366f1, #22d3ee);
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s;
+}
+
+.btn:hover { transform: translateY(-4px); }
+
+/* ---------- FOOTER ---------- */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #9ca3af;
+}
+
+/* ---------- DARK MODE BUTTON ---------- */
+.toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: none;
+    background: linear-gradient(135deg, #6366f1, #22d3ee);
+    color: #fff;
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* ---------- ANIMATION ---------- */
+@media(max-width:768px){
+    header h1 { font-size: 2.3rem; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Vansh Raj</h1>
+    <div class="typing">
+        <span id="text"></span><span class="cursor"></span>
+    </div>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        I am a B.Tech Computer Science and Engineering student at Lovely Professional University
+        with a strong interest in core programming and problem-solving. I have built a solid
+        foundation in C, C++, Java, and Data Structures & Algorithms through academic coursework,
+        hands-on projects, and professional training.
+    </p>
+    <p>
+        During my learning journey, I have worked on projects such as a C++-based Dice Game using
+        DSA concepts and an Arduino-based Temperature Monitoring System, which helped me understand
+        both software logic and hardware integration.
+    </p>
+    <p>
+        I have also completed a C++ Programming Summer Training from Cipher Schools, where I
+        strengthened my debugging skills, logical thinking, and coding discipline through structured
+        tasks and assessments.
+    </p>
+    <p>
+        I actively focus on improving my problem-solving abilities and strive to write clean,
+        efficient, and readable code. I am a motivated learner who believes in continuous growth
+        and aims to build a career as a software developer.
+    </p>
+</section>
+<section id="timeline">
+    <h2>My Journey</h2>
+
+    <div class="timeline">
+        <div class="event">
+            <span class="year">2023 – Present</span>
+            <h3>B.Tech in Computer Science & Engineering</h3>
+            <p>
+                Lovely Professional University, Punjab  
+                <br>
+                Focus on core computer science subjects, programming,
+                and Data Structures & Algorithms.
+            </p>
+        </div>
+
+        <div class="event">
+            <span class="year">June – July 2025</span>
+            <h3>C++ Programming Summer Training</h3>
+            <p>
+                Cipher Schools  
+                <br>
+                Gained hands-on experience in C++ fundamentals, debugging,
+                problem-solving, and clean coding practices.
+            </p>
+        </div>
+
+        <div class="event">
+            <span class="year">2023 – 2025</span>
+            <h3>Academic & Personal Projects</h3>
+            <p>
+                Developed DSA-based C++ projects and an Arduino-based
+                temperature monitoring system, strengthening both software
+                logic and hardware understanding.
+            </p>
+        </div>
+    </div>
+</section>
+<section id="goals">
+    <h2>Strengths & Career Goals</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Strengths</h3>
+            <ul>
+                <li>Strong foundation in C, C++, Java & DSA</li>
+                <li>Logical thinking and problem-solving ability</li>
+                <li>Quick learner with adaptability to new technologies</li>
+                <li>Good debugging and code-optimization skills</li>
+                <li>Team-oriented with effective communication</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Career Goals</h3>
+            <p>
+                My short-term goal is to secure an entry-level software
+                development role where I can apply my programming and
+                problem-solving skills.  
+                <br><br>
+                In the long term, I aim to grow into a skilled software
+                engineer who builds scalable, efficient, and impactful
+                software solutions while continuously learning new
+                technologies.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+        <span>C</span><span>C++</span><span>Java</span><span>DSA</span>
+        <span>Git</span><span>GitHub</span><span>VS Code</span>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+    <p><strong>Dice Game (C++)</strong> – Console game using DSA concepts.</p>
+    <p><strong>Arduino Temperature Monitoring System</strong> – Real-time system using sensors.</p>
+</section>
+
+<section id="experience">
+    <h2>Experience</h2>
+    <p>C++ Programming Summer Training – Cipher Schools</p>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email: vanshr863@gmail.com</p>
+    <p>LinkedIn: linkedin.com/in/vansh-raj</p>
+    <a class="btn" href="Vansh(CV).docx" download>Download Resume</a>
+</section>
+
+<footer>© 2026 Vansh Raj</footer>
+
+<button class="toggle" onclick="toggleDark()">🌙</button>
+
+<script>
+/* TYPING EFFECT */
+const roles = [
+    "B.Tech CSE Student",
+    "C++ & Java Programmer",
+    "DSA Problem Solver",
+    "Aspiring Software Developer"
+];
+let i = 0, j = 0, current = "", deleting = false;
+
+function typeEffect() {
+    if (!deleting && j <= roles[i].length) {
+        current = roles[i].substring(0, j++);
+    } else if (deleting && j >= 0) {
+        current = roles[i].substring(0, j--);
+    }
+
+    document.getElementById("text").textContent = current;
+
+    if (j === roles[i].length) deleting = true;
+    if (deleting && j === 0) {
+        deleting = false;
+        i = (i + 1) % roles.length;
+    }
+
+    setTimeout(typeEffect, deleting ? 80 : 120);
+}
+typeEffect();
+
+/* SECTION FADE IN */
+const sections = document.querySelectorAll("section");
+window.addEventListener("scroll", () => {
+    sections.forEach(sec => {
+        if (sec.getBoundingClientRect().top < window.innerHeight - 100) {
+            sec.classList.add("show");
+        }
+    });
+});
+
+/* DARK MODE */
+function toggleDark() {
+    document.body.classList.toggle("dark");
+    localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+}
+if (localStorage.getItem("theme") === "dark") document.body.classList.add("dark");
+</script>
+
+</body>
+</html>
